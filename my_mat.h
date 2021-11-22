@@ -1,9 +1,10 @@
 #ifndef _MyMat_H_
 #define _Mymat_H_
+#define num 10
 
-int fun1(int);
-int fun2(int,int,int));
-int fun3(int,int,int));
-int algo(int,int,int);
+void fun1(int a[num][num]);
+int fun2(int i, int j,int a[num][num]);
+int fun3(int i, int j,int a[num][num]);
+int algo(int a[num][num],int b,int c);
 
 #endif
