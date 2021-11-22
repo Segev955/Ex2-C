@@ -1,19 +1,20 @@
-
 CC=gcc
 Ar=ar
 FLAGS = -Wall -g
-NAME = connections
-OBJECT_MAIN= main.o my_mat.o
+NAME =connections
+OBJECT_MAIN=main.o my_mat.o
 
-all: $(OBJECT_MAIN)
-	$(CC) $(FLAGS) -o $(NAME)
+all: main.o my_mat.o connections
+
+connections: $(OBJECT_MAIN)
+	$(CC) $(FLAGS) -o connections $(OBJECT_MAIN)
 	
-main.o: my_mat.h main.c
-	$(CC) $(FLAGS) -o main.c
-my_mat.o: my_mat.h my_mat.c
-	$(CC) $(FLAGS) -o my_mat.c
+main.o: main.c my_mat.h
+	$(CC) $(FLAGS) -c main.c
+my_mat.o: my_mat.c my_mat.h
+	$(CC) $(FLAGS) -c my_mat.c
 
 .PHONY: clean all
 
 clean:
-	rm-f -f *.o *.a *.so $(NAME)
+	rm -f *.o *.a *.so $(NAME)
