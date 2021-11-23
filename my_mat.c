@@ -8,7 +8,6 @@
 
 //this function gets a matrix and fill it with input from the user
 void fun1(int a[num][num]) { //if a
-	
 	for (int i = 0; i<num; i++) {
 		for (int j = 0; j<num; j++) {
 			scanf ("%d", &a[i][j]);
@@ -32,13 +31,12 @@ int fun3(int i, int j,int a[num][num]) { //if c
 
 //this function calculate the distance in the graph according to the video that was recommended to solve this assigment https://www.youtube.com/watch?v=oNI0rf2P9gE
 int algo (int a[num][num],int b,int c) {
-	//int arr[10][10] = a;
 	for (int k = 0; k<num; k++) {
 		for (int i = 0; i<num; i++) {
 			for (int j = 0; j<num; j++) {
 				int x = a[i][k]+a[k][j];
-				if (a[i][k] == 0 || a[k][j] == 0) {
-					x = 0;
+				if (a[i][k] == infinity || a[k][j] == infinity) {
+					x = infinity;
 				}
 				if (x == 0 || i == j || i == k || j == k) {
 					continue;
