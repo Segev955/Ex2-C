@@ -9,7 +9,7 @@ int main() {
 	int a[num][num];
 	int i,j;
 	int ans;
-	while (x != 'D') {
+	while (x != 'D') { //case D will stop the function
 		scanf("%c", &x);
 		if (x == 'A') {
 			fun1(a);
