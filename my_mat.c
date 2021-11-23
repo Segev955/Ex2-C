@@ -30,11 +30,14 @@ int fun3(int i, int j,int a[num][num]) { //if c
 
 int algo (int a[num][num],int b,int c) {
 	//int arr[10][10] = a;
-	for (int k = 1; k<num; k++) {
-		for (int i = 1; i<num; i++) {
-			for (int j = 1; j<num; j++) {
+	for (int k = 0; k<num; k++) {
+		for (int i = 0; i<num; i++) {
+			for (int j = 0; j<num; j++) {
 				int x = a[i][k]+a[k][j];
-				if (x == 0) {
+				if (a[i][k] == 0 || a[k][j] == 0) {
+					x = 0;
+				}
+				if (x == 0 || i == j || i == k || j == k) {
 					continue;
 				}
 				if (a[i][j] == 0) {
